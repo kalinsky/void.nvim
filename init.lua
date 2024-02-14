@@ -347,7 +347,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Neotree --
-vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
+vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle reveal<CR>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -692,6 +692,9 @@ vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.autoindent = true
 vim.o.expandtab = false -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
+
+-- html syntax for isml files
+vim.cmd([[autocmd BufNewFile,BufRead *.isml set ft=html]])
 
 require("bufferline").setup{}
 
